@@ -1,0 +1,18 @@
+{
+     "hosts" : [
+        "h1",
+        "h2",
+        "h3",
+        "h4"
+     ],
+     "switches" : {
+        "s1": { "cli_input" :   "exp1-s1-ncmds.txt" },
+        "s2": { "cli_input" :   "exp1-s2-ncmds.txt" },
+        "s3": { "cli_input" :   "exp1-s3-ncmds.txt" }
+     },
+     "links" : [
+          ["s1", "s2"], ["s1", "s3"], 
+          ["s2", "h1"], ["s2", "h2"],
+          ["s3", "h3"], ["s3", "h4"]
+     ]
+}

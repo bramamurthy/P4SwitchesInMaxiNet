@@ -1,0 +1,43 @@
+{
+     "hosts" : [
+        "h1",
+        "h2",
+        "h3",
+        "h4",
+        "h5",
+        "h6"
+     ],
+     "switches" : {
+        "s1": { "cli_input" :   "s1-cmnds.txt" },
+        "s2": { "cli_input" :   "s2-cmnds.txt" },
+        "s3": { "cli_input" :   "s3-cmnds.txt" },
+        "s4": { "cli_input" :   "s4-cmnds.txt" },
+        "s5": { "cli_input" :   "s5-cmnds.txt" },
+        "s6": { "cli_input" :   "s6-cmnds.txt" },
+        "s7": { "cli_input" :   "s7-cmnds.txt" },
+        "s8": { "cli_input" :   "s8-cmnds.txt" },
+        "s9": { "cli_input" :   "s9-cmnds.txt" },
+        "s10": { "cli_input" :   "s10-cmnds.txt" },
+        "s11": { "cli_input" :   "s11-cmnds.txt" },
+        "s12": { "cli_input" :   "s12-cmnds.txt" }
+     },
+     "links" : [
+          ["s1", "s2"], ["s1", "s4"], ["s1","s5"],
+          ["s2", "s4"], ["s2", "s5"], 
+
+          ["s7", "s3"], ["s7", "s4"], ["s7","s5"], ["s7","s6"],
+          ["s8", "s3"], ["s8", "s4"], ["s8","s5"], ["s8","s6"],
+          ["s9", "s3"], ["s9", "s4"], ["s9","s5"], ["s9","s6"],
+          ["s10", "s3"], ["s10", "s4"], ["s10","s5"], ["s10","s6"],
+          ["s11", "s3"], ["s11", "s4"], ["s11","s5"], ["s11","s6"],
+          ["s12", "s3"], ["s12", "s4"], ["s12","s5"], ["s12","s6"],
+
+          ["s7", "h1"], ["s8", "h2"],
+          ["s9", "h3"], ["s10", "h4"],
+          ["s11", "h5"], ["s12", "h6"]
+     ],
+     "host_cmnds" : [
+     ],
+     "allowed_paths" : {
+     }
+}

@@ -495,7 +495,12 @@ class Worker(object):
         """
         return self.mininet.addLink(node1, node2, port1, port2, cls,
                                     **params)
-
+ 
+    # Added by RB
+    def program_myswitch(self, swname ):
+        print "At Worker Program My Switch ...",swname
+        self.mininet.program_myswitch(swname)
+        return
 
 class TunHelper:
     """Class to manage tunnel interface names.
@@ -1557,6 +1562,13 @@ class Experiment(object):
         for worker in self.cluster.workers():
             worker.stop()
         self.cluster.remove_all_tunnels()
+
+    # Added by RB
+    def program_myswitch(self,swname):
+        tmp_worker = self.get_worker(swname)
+        # print "Worker for Switch Name ...",tmp_worker
+        tmp_worker.program_myswitch(swname)
+        return
 
 
 class NodeWrapper(object):

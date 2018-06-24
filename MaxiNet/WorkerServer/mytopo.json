@@ -1,0 +1,71 @@
+{
+     "hosts" : [
+        "h1",
+        "h2",
+        "h3",
+        "h4",
+        "h5",
+        "h6",
+        "h7",
+        "h8",
+        "h9",
+        "h10",
+        "h11",
+        "h12",
+        "h13",
+        "h14",
+        "h15",
+        "h16"
+     ],
+     "switches" : {
+        "s1": { "cli_input" :   "s1-cmnds.txt" },
+        "s2": { "cli_input" :   "s2-cmnds.txt" },
+        "s3": { "cli_input" :   "s3-cmnds.txt" },
+        "s4": { "cli_input" :   "s4-cmnds.txt" },
+        "s5": { "cli_input" :   "s5-cmnds.txt" },
+        "s6": { "cli_input" :   "s6-cmnds.txt" },
+        "s7": { "cli_input" :   "s7-cmnds.txt" },
+        "s8": { "cli_input" :   "s8-cmnds.txt" },
+        "s9": { "cli_input" :   "s9-cmnds.txt" },
+        "s10": { "cli_input" :   "s10-cmnds.txt" },
+        "s11": { "cli_input" :   "s11-cmnds.txt" },
+        "s12": { "cli_input" :   "s12-cmnds.txt" },
+        "s13": { "cli_input" :   "s13-cmnds.txt" },
+        "s14": { "cli_input" :   "s14-cmnds.txt" },
+        "s15": { "cli_input" :   "s15-cmnds.txt" },
+        "s16": { "cli_input" :   "s16-cmnds.txt" }
+     },
+     "links" : [
+          ["s1", "s2",20,500], ["s1", "s4",20,500], ["s1","s5",20,500], ["s1","s13",20,500],
+          ["s2", "s3",20,500], ["s2", "s6",20,500], ["s2","s14",20,500], 
+          ["s3", "s4",20,500], ["s3", "s7",20,500], ["s3","s15",20,500], 
+          ["s4", "s8",20,500], ["s4", "s16",20,500], 
+
+          ["s5", "s6",30,500], ["s5", "s9",30,500], ["s5","s8",30,500], 
+          ["s6", "s7",30,500], ["s6", "s10",30,500], 
+          ["s7", "s8",30,500], ["s7", "s11",30,500], 
+          ["s8", "s12",30,500], 
+
+          ["s9", "s10",30,500], ["s9", "s13",30,500], ["s9","s12",30,500],
+          ["s10", "s11",30,500], ["s10", "s14",30,500], 
+          ["s11", "s12",30,500], ["s11", "s15",30,500], 
+          ["s12", "s16",30,500], 
+
+          ["s13", "s14",30,500], ["s13", "s16",30,500], 
+          ["s14", "s15",30,500], 
+          ["s15", "s16",30,500],
+
+          ["s1", "h1",50], ["s2", "h2",50], ["s3","h3",50], ["s4","h4",50],
+          ["s5", "h5",50], ["s6", "h6",50], ["s7","h7",50], ["s8","h8",50],
+          ["s9", "h9",50], ["s10", "h10",50], ["s11","h11",50], ["s12","h12",50],
+          ["s13", "h13",50], ["s14", "h14",50], ["s15","h15",50], ["s16","h16",50]
+  
+     ],
+     "host_cmnds" : [
+         ["h1", "python new_cmd_monitor.py --cmd_file=/tmp/h1_cmnds.txt > /tmp/h1_cmdout & " ],
+         ["h2", "python new_cmd_monitor.py --cmd_file=/tmp/h2_cmnds.txt > /tmp/h2_cmdout & " ],
+         ["h3", "python new_cmd_monitor.py --cmd_file=/tmp/h3_cmnds.txt > /tmp/h3_cmdout & " ]
+     ],
+     "allowed_paths" : {
+     }
+}

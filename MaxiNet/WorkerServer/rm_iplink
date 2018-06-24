@@ -1,0 +1,6 @@
+
+ip link show | grep '\-eth' | awk '{print $2}' | cut -d'@' -f 1 | while read intfname
+do
+    echo "Going to delete ..." $intfname
+    ip link delete $intfname
+done

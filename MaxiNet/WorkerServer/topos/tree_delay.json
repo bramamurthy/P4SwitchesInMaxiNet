@@ -1,0 +1,41 @@
+{
+     "hosts" : [
+        "h1",
+        "h2",
+        "h3",
+        "h4",
+        "h5",
+        "h6",
+        "h7",
+        "h8"
+     ],
+     "switches" : {
+        "s1": { "cli_input" :   "s1-cmnds.txt" },
+        "s2": { "cli_input" :   "s2-cmnds.txt" },
+        "s3": { "cli_input" :   "s3-cmnds.txt" },
+        "s4": { "cli_input" :   "s4-cmnds.txt" },
+        "s5": { "cli_input" :   "s5-cmnds.txt" },
+        "s6": { "cli_input" :   "s6-cmnds.txt" },
+        "s7": { "cli_input" :   "s7-cmnds.txt" }
+     },
+     "links" : [
+          ["s1", "s2",100],
+          ["s1", "s5",100],
+          ["s2", "s3",100],
+          ["s2", "s4",100],
+          ["s3", "h1",50],
+          ["s3", "h2",50],
+          ["s4", "h3",50],
+          ["s4", "h4",50],
+          ["s5", "s6",100],
+          ["s5", "s7",100],
+          ["s6", "h5",50],
+          ["s6", "h6",50],
+          ["s7", "h7",50],
+          ["s7", "h8",50]
+     ],
+     "host_cmnds" : [
+     ],
+     "allowed_paths" : {
+     }
+}
